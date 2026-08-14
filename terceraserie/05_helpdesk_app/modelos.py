@@ -16,6 +16,10 @@ class Usuario:
         self.email = email
         self.rol = rol
 
+    def es_tecnico(self):
+        """Indica si el usuario tiene el rol de técnico."""
+        return self.rol.lower() == "technician"
+
     def __str__(self):
         return (
             f"Usuario #{self.id} | "
@@ -44,9 +48,14 @@ class Ticket:
         self.tecnico = None
         self._status = "Open"
 
+    @property
+    def status(self):
+        """Devuelve el estado actual del ticket."""
+        return self._status
+
     def asignar_tecnico(self, tecnico):
         """Asigna un técnico válido al ticket."""
-        if tecnico.rol.lower() != "technician":
+        if not tecnico.es_tecnico():
             return False
 
         self.tecnico = tecnico

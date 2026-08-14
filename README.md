@@ -94,3 +94,24 @@ Modelo UML del sistema HelpDesk con asociaciones entre usuarios, tickets y artí
 #### Diagrama UML renderizado
 ![Diagrama HelpDesk](terceraserie/screenshots/04_diagrama_helpdesk.png)
 
+
+
+## EJERCICIO 5 - HelpDesk App
+
+### Enunciado
+
+Integrar consola, modularidad, programación orientada a objetos, relaciones y estructura de programa en una solución pequeña y ejecutable.
+
+El programa se divide en `modelos.py`, `servicios.py` y `main.py`, trabajando con una lista de objetos `Ticket` y separando las responsabilidades de cada módulo.
+
+### Descripción
+
+Aplicación modular de HelpDesk que permite registrar tickets, buscarlos, asignar un técnico, cambiar su estado y listarlos mediante un menú de consola.
+
+### Evidencias
+
+#### Registro y asignación de técnico
+![Registro y asignación](terceraserie/screenshots/05_registro_asignacion.png)
+
+#### Cambio de estado y listado final
+![Estado y listado](terceraserie/screenshots/05_estado_listado.png)    

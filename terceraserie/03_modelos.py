@@ -45,6 +45,15 @@ class Ticket:
         self.tecnico = tecnico
         self._status = "Open"
 
+    def asignar_tecnico(self, tecnico):
+        """Asigna un técnico al ticket si su rol es válido."""
+        if tecnico.rol.lower() != "technician":
+            print("Error: el usuario seleccionado no tiene rol technician.")
+            return
+
+        self.tecnico = tecnico
+        print(f"Técnico {tecnico.nombre} asignado correctamente.")
+
     def cambiar_estado(self, nuevo_estado):
         """Cambia el estado del ticket si el valor es válido."""
         if nuevo_estado not in ESTADOS_VALIDOS:

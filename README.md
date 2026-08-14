@@ -56,4 +56,26 @@ Programa de consola para administrar varios tickets durante una misma ejecución
 ![Resumen por prioridad](terceraserie/screenshots/02_resumen_prioridad.png)
 
 
+## Ejercicio 3 - Modelos con POO
+
+### Enunciado
+
+Representar usuarios mediante tickets con estado, comportamiento y colecciones de objetos.
+
+El programa crea las clases `Usuario` y `Ticket`, utilizando `__init__`, `self` y `__str__`. También permite asignar un técnico, cambiar el estado del ticket y validar que únicamente se utilicen estados permitidos.
+
+### Descripción
+
+Programa Orientado a Objetos (POO) que representa usuarios y tickets de un sistema HelpDesk. Crea dos usuarios y tres tickets, los almacena en una lista, asigna un técnico a un ticket y demuestra el cambio y validación de estados.
+
+### Evidencias
+
+#### Usuarios y tickets creados
+![Usuarios y tickets](terceraserie/screenshots/03_usuarios_tickets.png)
+
+#### Asignación y cambio de estado
+![Pruebas de estado](terceraserie/screenshots/03_pruebas_estado.png)
+
+
+
 

@@ -54,6 +54,49 @@ def registrar_ticket(tickets):
     print("Ticket registrado correctamente.")
 
 
+def listar_tickets(tickets):
+    """Muestra todos los tickets registrados."""
+    if len(tickets) == 0:
+        print("No hay tickets registrados.")
+        return
+
+    print("\n--- LISTA DE TICKETS ---")
+
+    for ticket in tickets:
+        print(
+            f"Ticket #{ticket['numero']} | "
+            f"Solicitante: {ticket['solicitante']} | "
+            f"Título: {ticket['titulo']} | "
+            f"Prioridad: {ticket['prioridad']} | "
+            f"Status: {ticket['status']}"
+        )
+
+
+def buscar_por_solicitante(tickets):
+    """Busca tickets por el nombre del solicitante."""
+    nombre = input("Ingrese el nombre del solicitante: ").strip().lower()
+
+    encontrados = []
+
+    for ticket in tickets:
+        if ticket["solicitante"].lower() == nombre:
+            encontrados.append(ticket)
+
+    if len(encontrados) == 0:
+        print("No se encontraron tickets para ese solicitante.")
+        return
+
+    print("\n--- TICKETS ENCONTRADOS ---")
+
+    for ticket in encontrados:
+        print(
+            f"Ticket #{ticket['numero']} | "
+            f"Título: {ticket['titulo']} | "
+            f"Prioridad: {ticket['prioridad']} | "
+            f"Status: {ticket['status']}"
+        )
+
+
 def ejecutar_menu():
     """Ejecuta el menú principal del programa."""
     tickets = []

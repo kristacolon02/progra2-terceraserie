@@ -17,6 +17,18 @@ def main():
     categoria = input("Ingrese la categoría: ").strip()
     prioridad = input("Ingrese la prioridad: ").strip()
 
+    if not solicitante or not titulo or not descripcion:
+        print("Error: los campos obligatorios no pueden estar vacíos.")
+        return
+
+    if categoria not in CATEGORIAS_VALIDAS:
+        print("Error: categoría no válida.")
+        return
+
+    if prioridad not in PRIORIDADES_VALIDAS:
+        print("Error: prioridad no válida.")
+        return
+
 
 if __name__ == "__main__":
     main()

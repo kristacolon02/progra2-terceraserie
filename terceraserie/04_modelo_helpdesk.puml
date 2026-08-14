@@ -1,0 +1,47 @@
+@startuml ModeloHelpDesk
+
+skinparam classAttributeIconSize 0
+hide circle
+
+class User {
+    -id: int
+    -name: str
+    -email: str
+    -role: str
+    +verificarCredenciales(password: str): bool
+}
+
+class Ticket {
+    -id: int
+    -title: str
+    -category: str
+    -priority: str
+    -status: str
+    +asignarTecnico(tecnico: User): None
+    +cambiarEstado(nuevoEstado: str): None
+}
+
+class Comment {
+    -id: int
+    -body: str
+    -createdAt: datetime
+    +mostrarComentario(): str
+}
+
+class History {
+    -id: int
+    -eventType: str
+    -detail: str
+    -createdAt: datetime
+    +mostrarEvento(): str
+}
+
+class Article {
+    -id: int
+    -title: str
+    -body: str
+    -category: str
+    +mostrarArticulo(): str
+}
+
+@enduml

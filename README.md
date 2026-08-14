@@ -56,7 +56,7 @@ Programa de consola para administrar varios tickets durante una misma ejecución
 ![Resumen por prioridad](terceraserie/screenshots/02_resumen_prioridad.png)
 
 
-## Ejercicio 3 - Modelos con POO
+## EJERCICIO 3 - Modelos con POO
 
 ### Enunciado
 
@@ -77,5 +77,20 @@ Programa Orientado a Objetos (POO) que representa usuarios y tickets de un siste
 ![Pruebas de estado](terceraserie/screenshots/03_pruebas_estado.png)
 
 
+## EJERCICIO 4 - Modelo HelpDesk con UML
 
+### Enunciado
+
+Diseñar un modelo coherente para HelpDesk utilizando UML y relacionarlo con esqueletos Python, sin persistencia ni frameworks.
+
+El ejercicio incluye las entidades User, Ticket, Comment, History y Article, junto con sus relaciones, multiplicidades y composiciones.
+
+### Descripción
+
+Modelo UML del sistema HelpDesk con asociaciones entre usuarios, tickets y artículos, además de composiciones entre Ticket, Comment y History. También lleva lo que son esqueletos Python consistentes con el diagrama y una justificación de las relaciones utilizadas.
+
+### Evidencias
+
+#### Diagrama UML renderizado
+![Diagrama HelpDesk](terceraserie/screenshots/04_diagrama_helpdesk.png)
 

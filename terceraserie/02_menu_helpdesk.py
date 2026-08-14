@@ -3,7 +3,7 @@ PRIORIDADES_VALIDAS = ["Low", "Medium", "High", "Critical"]
 
 
 def pedir_opcion():
-    """Solicita una opción del menú al usuario."""
+    """Muestra el menú y solicita una opción al usuario."""
     print("\n--- MENÚ HELPDESK ---")
     print("1. Registrar ticket")
     print("2. Listar tickets")
@@ -28,15 +28,35 @@ def registrar_ticket(tickets):
     categoria = input("Categoría: ").strip()
     prioridad = input("Prioridad: ").strip()
 
-    if not solicitante or not titulo or not descripcion:
+    if (
+        not solicitante
+        or not titulo
+        or not descripcion
+        or not categoria
+        or not prioridad
+    ):
         print("Error: los campos obligatorios no pueden estar vacíos.")
         return
 
-    if categoria not in CATEGORIAS_VALIDAS:
+    categoria_correcta = None
+
+    for opcion in CATEGORIAS_VALIDAS:
+        if opcion.lower() == categoria.lower():
+            categoria_correcta = opcion
+            break
+
+    if categoria_correcta is None:
         print("Error: categoría no válida.")
         return
 
-    if prioridad not in PRIORIDADES_VALIDAS:
+    prioridad_correcta = None
+
+    for opcion in PRIORIDADES_VALIDAS:
+        if opcion.lower() == prioridad.lower():
+            prioridad_correcta = opcion
+            break
+
+    if prioridad_correcta is None:
         print("Error: prioridad no válida.")
         return
 
@@ -45,8 +65,8 @@ def registrar_ticket(tickets):
         "solicitante": solicitante,
         "titulo": titulo,
         "descripcion": descripcion,
-        "categoria": categoria,
-        "prioridad": prioridad,
+        "categoria": categoria_correcta,
+        "prioridad": prioridad_correcta,
         "status": "Open"
     }
 
@@ -97,11 +117,53 @@ def buscar_por_solicitante(tickets):
         )
 
 
+def mostrar_resumen(tickets):
+    """Muestra la cantidad de tickets por prioridad."""
+    if len(tickets) == 0:
+        print("No hay tickets registrados.")
+        return
+
+    print("\n--- RESUMEN POR PRIORIDAD ---")
+
+    for prioridad in PRIORIDADES_VALIDAS:
+        cantidad = 0
+
+        for ticket in tickets:
+            if ticket["prioridad"].lower() == prioridad.lower():
+                cantidad += 1
+
+        print(f"{prioridad}: {cantidad}")
+
+    print(f"Total de tickets: {len(tickets)}")
+
+
 def ejecutar_menu():
-    """Ejecuta el menú principal del programa."""
+    """Ejecuta el menú principal del sistema HelpDesk."""
     tickets = []
-    pass
+
+    while True:
+        opcion = pedir_opcion()
+
+        if opcion == "1":
+            registrar_ticket(tickets)
+
+        elif opcion == "2":
+            listar_tickets(tickets)
+
+        elif opcion == "3":
+            buscar_por_solicitante(tickets)
+
+        elif opcion == "4":
+            mostrar_resumen(tickets)
+
+        elif opcion == "5":
+            print("Programa finalizado.")
+            break
+
+        else:
+            print("Opción no válida. Intente nuevamente.")
 
 
 if __name__ == "__main__":
     ejecutar_menu()
+    

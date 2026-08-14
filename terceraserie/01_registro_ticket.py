@@ -29,6 +29,25 @@ def main():
         print("Error: prioridad no válida.")
         return
 
+    ticket = {
+        "numero": numero_ticket,
+        "solicitante": solicitante,
+        "titulo": titulo,
+        "descripcion": descripcion,
+        "categoria": categoria,
+        "prioridad": prioridad,
+        "status": "Open"
+    }
+
+    print("\n--- RESUMEN DEL TICKET ---")
+    print(f"Número: {ticket['numero']}")
+    print(f"Solicitante: {ticket['solicitante']}")
+    print(f"Título: {ticket['titulo']}")
+    print(f"Descripción: {ticket['descripcion']}")
+    print(f"Categoría: {ticket['categoria']}")
+    print(f"Prioridad: {ticket['prioridad']}")
+    print(f"Status: {ticket['status']}")
+
 
 if __name__ == "__main__":
     main()
